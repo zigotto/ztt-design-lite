@@ -1,0 +1,24 @@
+{
+  "name": "ztt-design-lite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "zttdesignlite.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zigotto/ztt-design-lite.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zigotto/ztt-design-lite/issues"
+  },
+  "homepage": "https://github.com/zigotto/ztt-design-lite#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ztt-design-lite",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-touch": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-aria": "^1.5.8"
+  }
+}
