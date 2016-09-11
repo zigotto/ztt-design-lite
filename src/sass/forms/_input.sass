@@ -1,0 +1,49 @@
+.form-group
+  margin-top: 5px
+  padding-top: 15px
+  margin-bottom: 15px
+  position: relative
+  overflow: hidden
+
+  &:after
+    content: ""
+    left: 50%
+    right: 0
+    bottom: 0
+    width: 0
+    height: 2px
+    display: block
+    position: absolute
+    transition: .2s width ease-in
+    transform: translateX(-50%)
+
+.form-group--focus
+  &:after
+    width: 100%
+    background: $input-focus-border-color
+
+.form-group__label
+  left: 0
+  top: 20px
+  font-size: 14px
+  font-weight: 600
+  color: $label-default-color
+  position: absolute
+  transition: .2s all ease-in
+
+.form-group__label--focus
+  top: 0
+  font-size: 12px
+
+.form-group__input,
+.form-group__textarea
+  width: 100%
+  padding: 5px
+  border: 0
+  border-bottom: 1px solid $input-default-border-color
+
+  &:focus
+    outline: none
+
+.form-group__textarea
+  float: left
