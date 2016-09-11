@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="dist/main.css">
   </head>
   <body ng-controller="showcaseCtrl as vm">
-    <!-- .form-group ng-repeat="user in vm.users" ztt-form-group="" -->
+    <!-- Input showcase -->
+
     <div class="ztt-form-group" ng-repeat="user in vm.users">
       <label class="ztt-form-group__label" for="input{{$index}}">Nome</label>
       <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="user.name" ztt-input=""/>
@@ -20,6 +21,31 @@
       <label class="ztt-form-group__label" for="textarea">Descrição</label>
       <textarea class="ztt-form-group__textarea" id="textarea" rows="5" ng-model="vm.description" ztt-input=""></textarea>
     </div>
+
+    <!-- Radio showcase -->
+
+    <div class="ztt-form-group">
+      <label class="ztt-radio" for="radio">
+        <input class="ztt-radio__input" type="radio" id="radio" value="1" name="radios" ng-model="vm.checked"/>
+        <div class="ztt-radio__icon-wrapper">
+          <i class="ztt-radio__icon"></i>
+        </div>
+        <span class="ztt-radio__text">Option 1</span>
+      </label>
+    </div>
+
+    <div class="ztt-form-group">
+      <label class="ztt-radio" for="radio2">
+        <input class="ztt-radio__input" type="radio" id="radio2" value="2" name="radios" ng-model="vm.checked"/>
+        <div class="ztt-radio__icon-wrapper">
+          <i class="ztt-radio__icon"></i>
+        </div>
+        <span class="ztt-radio__text">Option 2</span>
+      </label>
+    </div>
+
+    <button ng-click="vm.checked = 1">Marcar opção 1</button>
+    <button ng-click="vm.checked = 2">Marcar opção 2</button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="dist/main.js"></script>
@@ -41,7 +67,8 @@
             { "name": "Éder" },
             { "name": "Jésus" },
             { "name": "Yuri" }
-          ]
+          ];
+          vm.checked = 3;
         }
       })();
     </script>

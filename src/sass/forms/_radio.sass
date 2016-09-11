@@ -1,0 +1,41 @@
+.ztt-radio,
+.ztt-radio__icon-wrapper,
+.ztt-radio__icon
+  box-sizing: border-box
+
+.ztt-radio
+  width: 100%
+  display: flex
+  align-items: center
+  cursor: pointer
+
+.ztt-radio__input
+  opacity: 0
+  position: absolute
+  pointer-events: none
+
+  &:checked + .ztt-radio__icon-wrapper .ztt-radio__icon
+    opacity: 1
+
+  &:focus + .ztt-radio__icon-wrapper
+    box-shadow: 0 1px 1px 10px rgba(0,0,0,0.1)
+
+.ztt-radio__icon-wrapper
+  width: 16px
+  height: 16px
+  border-radius: 50%
+  border: 2px solid #000
+  margin-right: 10px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: .2s all cubic-bezier(.4, 0, .2, 1)
+
+.ztt-radio__icon
+  opacity: 0
+  width: 8px
+  height: 8px
+  display: block
+  background: #000
+  border-radius: 50%
+  transition: .2s all cubic-bezier(.4,0,.2,1)
