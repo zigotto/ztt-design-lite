@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="dist/main.css">
   </head>
-  <body ng-controller="showcaseCtrl as vm">
+  <body ng-controller="showcaseCtrl as vm" style="background: #f1f1f1;">
     <!-- Input showcase -->
 
     <div class="ztt-form-group" ng-repeat="user in vm.users">
@@ -63,6 +63,17 @@
           <i class="ztt-checkbox__icon">&times;</i>
         </div>
         <span class="ztt-checkbox__text">Opção 2</span>
+      </label>
+    </div>
+
+    <!-- Switch showcase -->
+
+    <div class="ztt-form-group">
+      <label class="ztt-switch" for="switch">
+        <input class="ztt-switch__input" id="switch" type="checkbox" />
+        <div class="ztt-switch__track">
+          <div class="ztt-switch__track-ball"></div>
+        </div>
       </label>
     </div>
 
