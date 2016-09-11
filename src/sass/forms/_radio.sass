@@ -14,17 +14,17 @@
   position: absolute
   pointer-events: none
 
-  &:checked + .ztt-radio__icon-wrapper .ztt-radio__icon
-    opacity: 1
+  &:checked + .ztt-radio__icon-wrapper
+    border-color: $radio-checked-color
 
-  &:focus + .ztt-radio__icon-wrapper
-    box-shadow: 0 1px 1px 10px rgba(0,0,0,0.1)
+    .ztt-radio__icon
+      opacity: 1
 
 .ztt-radio__icon-wrapper
   width: 16px
   height: 16px
   border-radius: 50%
-  border: 2px solid #000
+  border: 2px solid $radio-default-color
   margin-right: 10px
   display: flex
   align-items: center
@@ -36,6 +36,6 @@
   width: 8px
   height: 8px
   display: block
-  background: #000
+  background: $radio-checked-color
   border-radius: 50%
-  transition: .2s all cubic-bezier(.4,0,.2,1)
+  transition: .2s all cubic-bezier(.4, 0, .2, 1)

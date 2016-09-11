@@ -15,7 +15,8 @@
   pointer-events: none
 
   &:checked + .ztt-checkbox__icon-wrapper
-    background: #000
+    background: $checkbox-checked-color
+    border-color: $checkbox-checked-color
 
     .ztt-checkbox__icon
       opacity: 1
@@ -27,7 +28,7 @@
   width: 16px
   height: 16px
   border-radius: 3px
-  border: 2px solid #000
+  border: 2px solid $checkbox-default-color
   margin-right: 10px
   display: flex
   align-items: center
