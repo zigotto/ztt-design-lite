@@ -11,14 +11,14 @@
   </head>
   <body ng-controller="showcaseCtrl as vm">
     <!-- .form-group ng-repeat="user in vm.users" ztt-form-group="" -->
-    <div class="form-group" ng-repeat="user in vm.users">
-      <label class="form-group__label" for="input{{$index}}">Nome</label>
-      <input class="form-group__input" id="input{{$index}}" type="text" ng-model="user.name" ztt-input=""/>
+    <div class="ztt-form-group" ng-repeat="user in vm.users">
+      <label class="ztt-form-group__label" for="input{{$index}}">Nome</label>
+      <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="user.name" ztt-input=""/>
     </div>
 
-    <div class="form-group">
-      <label class="form-group__label" for="textarea">Descrição</label>
-      <textarea class="form-group__textarea" id="textarea" rows="5" ng-model="vm.description" ztt-input=""></textarea>
+    <div class="ztt-form-group">
+      <label class="ztt-form-group__label" for="textarea">Descrição</label>
+      <textarea class="ztt-form-group__textarea" id="textarea" rows="5" ng-model="vm.description" ztt-input=""></textarea>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
