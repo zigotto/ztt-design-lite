@@ -44,6 +44,28 @@
       </label>
     </div>
 
+    <!-- Checkbox showcase -->
+
+    <div class="ztt-form-group">
+      <label class="ztt-checkbox" for="check">
+        <input id="check" class="ztt-checkbox__input" type="checkbox" name="checks" value="1" ng-model="vm.checked" ng-checked="vm.checked === 1" />
+        <div class="ztt-checkbox__icon-wrapper">
+          <i class="ztt-checkbox__icon">&times;</i>
+        </div>
+        <span class="ztt-checkbox__text">Opção 1</span>
+      </label>
+    </div>
+
+    <div class="ztt-form-group">
+      <label class="ztt-checkbox" for="check2">
+        <input id="check2" class="ztt-checkbox__input" type="checkbox" name="checks" value="2" ng-model="vm.checked" ng-checked="vm.checked === 2" />
+        <div class="ztt-checkbox__icon-wrapper">
+          <i class="ztt-checkbox__icon">&times;</i>
+        </div>
+        <span class="ztt-checkbox__text">Opção 2</span>
+      </label>
+    </div>
+
     <button ng-click="vm.checked = 1">Marcar opção 1</button>
     <button ng-click="vm.checked = 2">Marcar opção 2</button>
 
