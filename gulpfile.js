@@ -11,7 +11,7 @@ var angularFileSort = require("gulp-angular-filesort");
 var paths = {
   js:       'src/js/**/*.js',
   sass:     'src/sass/**/*.sass',
-  mainSass: 'src/sass/main.sass',
+  mainSass: 'src/sass/zttdesignlite.sass',
   dist:     'dist/',
   dev:      'src/'
 };
@@ -44,7 +44,7 @@ gulp.task("js", function () {
   gulp.src(paths.js)
     .pipe(plumber())
     .pipe(angularFileSort())
-    .pipe(concat("main.js"))
+    .pipe(concat("zttdesignlite.js"))
     .pipe(gulp.dest(paths.dist));
 });
 

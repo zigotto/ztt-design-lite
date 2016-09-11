@@ -1,0 +1,23 @@
+{
+  "name": "ztt-design-lite",
+  "description": "Micro frontend UI set based on Material Design",
+  "main": "zttdesignlite.css",
+  "authors": [
+    "Lucas Ramos <lucasrcdias@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "material",
+    "ui",
+    "ztt",
+    "zigotto"
+  ],
+  "homepage": "https://github.com/zigotto/ztt-design-lite",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
