@@ -1,5 +1,6 @@
 var gulp            = require("gulp");
 var sass            = require("gulp-sass");
+var watch           = require("gulp-watch");
 var concat          = require("gulp-concat");
 var cssnano         = require("gulp-cssnano");
 var plumber         = require("gulp-plumber");
@@ -30,7 +31,7 @@ var autoprefixerOptions = {
   cascade: false
 };
 
-gulp.task("style", function() {
+gulp.task("style", function () {
   gulp.src(paths.mainSass)
     .pipe(plumber())
     .pipe(sass())
@@ -39,7 +40,7 @@ gulp.task("style", function() {
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task("js", function() {
+gulp.task("js", function () {
   gulp.src(paths.js)
     .pipe(plumber())
     .pipe(angularFileSort())
@@ -47,12 +48,17 @@ gulp.task("js", function() {
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task("watch", function() {
-  gulp.watch(paths.js,   ["js"]);
-  gulp.watch(paths.sass, ["style"]);
+gulp.task("watch", function () {
+  watch(paths.js, function () {
+    gulp.start("js");
+  });
+
+  watch(paths.sass, function () {
+    gulp.start("style");
+  });
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
   browserSync.init(paths.dev, {
     port: '9000',
     server: {
