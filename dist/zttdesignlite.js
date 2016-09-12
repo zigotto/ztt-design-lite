@@ -22,6 +22,8 @@
       var formGroup = input.parentElement;
       var formLabel = formGroup.querySelector("label");
 
+      var floatingLabel = attributes.zttInput !== "placeholder";
+
       input.addEventListener("focusin", focusInHandler);
       input.addEventListener("focusout", focusOutHandler);
       input.addEventListener("input change blue", inputUpdateHandler);
@@ -32,7 +34,10 @@
 
       function focusInHandler(event) {
         formGroup.classList.add(formGroupFocusClass);
-        formLabel.classList.add(formLabelFocusClass);
+
+        if (floatingLabel) {
+          formLabel.classList.add(formLabelFocusClass);
+        }
       }
 
       function focusOutHandler(event) {
@@ -44,8 +49,10 @@
       }
 
       function inputUpdateHandler(event) {
-        if (input.value !== "") {
+        if (input.value.trim() !== "") {
           formLabel.classList.add(formLabelFocusClass);
+        } else if (!floatingLabel) {
+          formLabel.classList.remove(formLabelFocusClass);
         }
       }
     }

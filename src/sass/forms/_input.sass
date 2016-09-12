@@ -22,27 +22,34 @@
     background: $input-focus-border-color
 
 .ztt-form-group__label
-  left: 0
+  left: 5px
   top: 20px
   font-size: 14px
   font-weight: 500
-  color: $label-default-color
   position: absolute
   transition: .2s all $default-animation
 
-.ztt-form-group__label--focus
-  top: 0
-  font-size: 12px
+.ztt-form-group__label--floating
+  color: $label-default-color
 
-.ztt-form-group__input,
-.ztt-form-group__textarea
+  &.ztt-form-group__label--focus
+    top: 0
+    font-size: 12px
+
+.ztt-form-group__label--placeholder
+  color: $label-placeholder-color
+
+  &.ztt-form-group__label--focus
+    opacity: 0
+    pointer-events: none
+
+.ztt-form-group__input
   width: 100%
   padding: 5px
+  display: block
+  font-family: $default-font
   border: 0
   border-bottom: 1px solid $input-default-border-color
 
   &:focus
     outline: none
-
-.ztt-form-group__textarea
-  display: block

@@ -14,13 +14,18 @@
     <!-- Input showcase -->
 
     <div class="ztt-form-group" ng-repeat="user in vm.users">
-      <label class="ztt-form-group__label" for="input{{$index}}">Nome</label>
+      <label class="ztt-form-group__label ztt-form-group__label--floating" for="input{{$index}}">Nome</label>
       <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="user.name" ztt-input=""/>
     </div>
 
     <div class="ztt-form-group">
-      <label class="ztt-form-group__label" for="textarea">Descrição</label>
-      <textarea class="ztt-form-group__textarea" id="textarea" rows="5" ng-model="vm.description" ztt-input=""></textarea>
+      <label class="ztt-form-group__label ztt-form-group__label--placeholder" for="input{{$index}}">Nome</label>
+      <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="vm.age" ztt-input="placeholder"/>
+    </div>
+
+    <div class="ztt-form-group">
+      <label class="ztt-form-group__label ztt-form-group__label--floating" for="textarea">Descrição</label>
+      <textarea class="ztt-form-group__input" id="textarea" rows="5" ng-model="vm.description" ztt-input=""></textarea>
     </div>
 
     <!-- Radio showcase -->
