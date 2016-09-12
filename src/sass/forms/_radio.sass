@@ -14,11 +14,19 @@
   position: absolute
   pointer-events: none
 
-  &:checked + .ztt-radio__icon-wrapper
-    border-color: $checked-color
+  &:checked
+    &+ .ztt-radio__icon-wrapper
+      border-color: $checked-color
 
-    .ztt-radio__icon
-      opacity: 1
+      .ztt-radio__icon
+        opacity: 1
+
+    &:focus + .ztt-radio__icon-wrapper
+      box-shadow: 0 0 1px 10px rgba(0, 200, 83, .3)
+
+  &:focus + .ztt-radio__icon-wrapper,
+  &:active + .ztt-radio__icon-wrapper
+    box-shadow: 0 0 1px 10px rgba(0, 0, 0, .2)
 
 .ztt-radio__icon-wrapper
   width: 16px
