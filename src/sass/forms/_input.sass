@@ -18,9 +18,11 @@
   width: calc(100% - 30px)
 
 .ztt-form-group
+  margin-bottom: 15px
+
+.ztt-form-group__wrapper
   margin-top: 5px
   padding-top: 15px
-  margin-bottom: 15px
   position: relative
 
   &:after
@@ -35,7 +37,7 @@
     transition: .2s width ease-in
     transform: translateX(-50%)
 
-.ztt-form-group--focus
+.ztt-form-group__wrapper--focus
   &:after
     width: 100%
     background: $input-focus-border-color
@@ -72,3 +74,17 @@
 
   &:focus
     outline: none
+
+.ztt-form-group__error,
+.ztt-form-group__hint
+  display: block
+  margin-top: 5px
+  margin-left: 5px
+  font-weight: 500
+  font-size: 0.75rem
+
+.ztt-form-group__error
+  color: $error-color
+
+.ztt-form-group__hint
+  color: $hint-color

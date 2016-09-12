@@ -11,7 +11,7 @@
     };
 
     function linkFunction (scope, element, attributes, ngModel) {
-      var formGroupFocusClass = "ztt-form-group--focus";
+      var formGroupFocusClass = "ztt-form-group__wrapper--focus";
       var formLabelFocusClass = "ztt-form-group__label--focus";
 
       var input     = element[0];
