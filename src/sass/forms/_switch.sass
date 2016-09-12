@@ -19,6 +19,15 @@
     .ztt-switch__track-ball
       left: 20px
 
+  &:focus  + .ztt-switch__track,
+  &:active + .ztt-switch__track
+   .ztt-switch__track-ball
+    box-shadow: 0 0 1px 10px rgba(0, 0, 0, .2)
+
+  &:checked:focus + .ztt-switch__track
+    .ztt-switch__track-ball
+      box-shadow: 0 0 1px 10px rgba(0, 200, 83, .3)
+
 .ztt-switch__track
   cursor: pointer
   width: 35px
