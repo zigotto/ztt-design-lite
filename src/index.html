@@ -19,8 +19,18 @@
     </div>
 
     <div class="ztt-form-group">
-      <label class="ztt-form-group__label ztt-form-group__label--placeholder" for="input{{$index}}">Nome</label>
+      <label class="ztt-form-group__label ztt-form-group__label--placeholder" for="input{{$index}}">Idade</label>
       <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="vm.age" ztt-input="placeholder"/>
+    </div>
+
+    <div class="ztt-icon-group">
+      <div class="ztt-icon-group__icon-wrapper">
+        <i class="ztt-icon-group__icon fa fa-user"></i>
+      </div>
+      <div class="ztt-form-group ztt-icon-group__form-group">
+        <label class="ztt-form-group__label ztt-form-group__label--floating" for="input{{$index}}">Idade</label>
+        <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="vm.age" ztt-input=""/>
+      </div>
     </div>
 
     <div class="ztt-form-group">
@@ -112,9 +122,7 @@
 
           vm.users = [
             { "name": "Lucas" },
-            { "name": "Éder" },
-            { "name": "Jésus" },
-            { "name": "Yuri" }
+            { "name": "Éder" }
           ];
           vm.checked = 3;
         }
