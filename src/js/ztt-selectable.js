@@ -47,13 +47,8 @@
       }
 
       function inputChangeHandler (event) {
-        var ngModelChanged = !event.target;
-
-        if (input.checked) {
-          inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--checked-focus");
-        } else if (!ngModelChanged) {
-          inputIcon.classList.add("ztt-" + kind + "__icon-wrapper--focus");
-        }
+        inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--focus");
+        inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--checked-focus");
       }
 
       $timeout(inputChangeHandler, 0);
