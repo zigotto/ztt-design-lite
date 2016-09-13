@@ -14,20 +14,12 @@
   position: absolute
   pointer-events: none
 
-  &:checked
-    &+ .ztt-checkbox__icon-wrapper
-      background: $checked-color
-      border-color: $checked-color
+  &:checked + .ztt-checkbox__icon-wrapper
+    background: $checked-color
+    border-color: $checked-color
 
-      .ztt-checkbox__icon
-        opacity: 1
-
-    &:focus + .ztt-checkbox__icon-wrapper
-      box-shadow: 0 0 1px 10px rgba(0, 200, 83, .3)
-
-  &:focus  + .ztt-checkbox__icon-wrapper,
-  &:active + .ztt-checkbox__icon-wrapper
-    box-shadow: 0 0 1px 10px rgba(0, 0, 0, .2)
+    .ztt-checkbox__icon
+      opacity: 1
 
 .ztt-checkbox__icon-wrapper
   width: 16px
@@ -39,6 +31,9 @@
   align-items: center
   justify-content: center
   transition: .2s all $default-animation
+
+.ztt-checkbox__icon-wrapper--light
+  border-color: $light-color
 
 .ztt-checkbox__icon
   opacity: 0
