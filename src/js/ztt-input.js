@@ -3,7 +3,9 @@
     .module("zttDesignLite")
     .directive("zttInput", zttInput);
 
-  function zttInput () {
+  zttInput.$inject = ["$timeout"];
+
+  function zttInput ($timeout) {
     var directive = {
       restrict: "A",
       require: "?ngModel",
@@ -53,6 +55,8 @@
           formLabel.classList.remove(formLabelFocusClass);
         }
       }
+
+      $timeout(inputUpdateHandler, 0);
     }
 
     return directive;

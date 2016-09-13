@@ -3,7 +3,9 @@
     .module("zttDesignLite")
     .directive("zttSelectable", zttSelectable);
 
-  function zttSelectable () {
+  zttSelectable.$inject = ["$timeout"];
+
+  function zttSelectable ($timeout) {
     var directive = {
       restrict: "A",
       require: "?ngModel",
@@ -53,6 +55,8 @@
           inputIcon.classList.add("ztt-" + kind + "__icon-wrapper--focus");
         }
       }
+
+      $timeout(inputChangeHandler, 0);
     }
 
     return directive;

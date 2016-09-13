@@ -7,7 +7,9 @@
     .module("zttDesignLite")
     .directive("zttSelectable", zttSelectable);
 
-  function zttSelectable () {
+  zttSelectable.$inject = ["$timeout"];
+
+  function zttSelectable ($timeout) {
     var directive = {
       restrict: "A",
       require: "?ngModel",
@@ -57,6 +59,8 @@
           inputIcon.classList.add("ztt-" + kind + "__icon-wrapper--focus");
         }
       }
+
+      $timeout(inputChangeHandler, 0);
     }
 
     return directive;
@@ -68,7 +72,9 @@
     .module("zttDesignLite")
     .directive("zttInput", zttInput);
 
-  function zttInput () {
+  zttInput.$inject = ["$timeout"];
+
+  function zttInput ($timeout) {
     var directive = {
       restrict: "A",
       require: "?ngModel",
@@ -118,6 +124,8 @@
           formLabel.classList.remove(formLabelFocusClass);
         }
       }
+
+      $timeout(inputUpdateHandler, 0);
     }
 
     return directive;
