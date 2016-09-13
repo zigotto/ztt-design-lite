@@ -45,7 +45,7 @@
 .ztt-form-group__label
   left: 5px
   top: 20px
-  font-size: 14px
+  font-size: 12px
   font-weight: 500
   position: absolute
   transition: .2s all $default-animation
@@ -55,7 +55,7 @@
 
   &.ztt-form-group__label--focus
     top: 0
-    font-size: 12px
+    font-size: 10px
 
 .ztt-form-group__label--placeholder
   color: $label-placeholder-color
@@ -75,6 +75,14 @@
 
   &:focus
     outline: none
+
+  &:disabled
+    cursor: not-allowed
+    border-color: #efefef
+
+    &+ .ztt-form-group__label
+      color: #d3d3d3
+      pointer-events: none
 
 .ztt-form-group__error,
 .ztt-form-group__hint
