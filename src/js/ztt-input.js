@@ -6,7 +6,7 @@
   function zttInput () {
     var directive = {
       restrict: "A",
-      require: "ngModel",
+      require: "?ngModel",
       link: linkFunction
     };
 
@@ -24,9 +24,11 @@
       input.addEventListener("focusout", focusOutHandler);
       input.addEventListener("input change blue", inputUpdateHandler);
 
-      scope.$watch(function () {
-        return ngModel.$modelValue;
-      }, inputUpdateHandler);
+      if (ngModel) {
+        scope.$watch(function () {
+          return ngModel.$modelValue;
+        }, inputUpdateHandler);
+      }
 
       function focusInHandler(event) {
         formGroup.classList.add(formGroupFocusClass);

@@ -37,6 +37,15 @@
 
       <div class="ztt-form-group">
         <div class="ztt-form-group__wrapper">
+          <label class="ztt-form-group__label ztt-form-group__label--floating" for="input33">Nome</label>
+          <input class="ztt-form-group__input" id="input33" type="text" ztt-input=""/>
+        </div>
+        <span class="ztt-form-group__hint">Mínimo 12 caracteres</span>
+        <span class="ztt-form-group__error">Campo obrigatório</span>
+      </div>
+
+      <div class="ztt-form-group">
+        <div class="ztt-form-group__wrapper">
           <label class="ztt-form-group__label ztt-form-group__label--placeholder" for="input{{$index}}">Idade</label>
           <input class="ztt-form-group__input" id="input{{$index}}" type="text" ng-model="vm.age" ztt-input="placeholder"/>
         </div>
@@ -76,7 +85,7 @@
             <div class="ztt-radio__icon-wrapper">
               <i class="ztt-radio__icon"></i>
             </div>
-            <span class="ztt-radio__text">Option 1</span>
+            <span class="ztt-radio__text ztt-radio__text--light">Option 1</span>
           </label>
         </div>
       </div>
