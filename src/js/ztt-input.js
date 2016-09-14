@@ -22,9 +22,9 @@
 
       var floatingLabel = attributes.zttInput !== "placeholder";
 
-      input.addEventListener("focusin", focusInHandler);
-      input.addEventListener("focusout", focusOutHandler);
-      input.addEventListener("input change blue", inputUpdateHandler);
+      input.addEventListener("focus",             focusInHandler);
+      input.addEventListener("blur",              focusOutHandler);
+      input.addEventListener("input change blur", inputUpdateHandler);
 
       if (ngModel) {
         scope.$watch(function () {
