@@ -107,15 +107,21 @@
       function focusOutHandler(event) {
         formGroup.classList.remove(formGroupFocusClass);
 
-        if (input.value === "") {
+        if (input.value.trim() === "") {
           formLabel.classList.remove(formLabelFocusClass);
         }
       }
 
       function inputUpdateHandler(event) {
-        if (input.value.trim() !== "") {
+        var inputValue = input.value;
+        var fromWatch  = typeof event === "string";
+        var hasFocus   = input === document.activeElement;
+
+        if (fromWatch) { inputValue = event; }
+
+        if (inputValue.trim() !== "") {
           formLabel.classList.add(formLabelFocusClass);
-        } else if (!floatingLabel) {
+        } else if (!hasFocus) {
           formLabel.classList.remove(formLabelFocusClass);
         }
       }
