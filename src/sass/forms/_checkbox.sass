@@ -1,0 +1,56 @@
+.ztt-checkbox,
+.ztt-checkbox__icon-wrapper,
+.ztt-checkbox__icon
+  box-sizing: border-box
+
+.ztt-checkbox
+  width: 100%
+  display: flex
+  align-items: center
+  cursor: pointer
+
+.ztt-checkbox__input
+  opacity: 0
+  position: absolute
+  pointer-events: none
+
+  &:checked + .ztt-checkbox__icon-wrapper
+    background: $checked-color
+    border-color: $checked-color
+
+    .ztt-checkbox__icon
+      opacity: 1
+
+.ztt-checkbox__icon-wrapper
+  width: 16px
+  height: 16px
+  border-radius: $border-radius
+  border: 2px solid $default-color
+  margin-right: 10px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: .2s all $default-animation
+
+.ztt-checkbox__icon-wrapper--light
+  border-color: $light-color
+
+.ztt-checkbox__icon-wrapper--focus
+  box-shadow: 0 0 1px 10px rgba(0, 0, 0, .1)
+
+.ztt-checkbox__icon-wrapper--checked-focus
+  box-shadow: 0 0 1px 10px rgba(0, 200, 83, .2)
+
+.ztt-checkbox__icon
+  opacity: 0
+  display: block
+  color: $light-color
+  font-size: 0.75rem
+
+.ztt-checkbox__text
+  font-weight: 500
+  font-size: 0.875rem
+  color: $text-color
+
+.ztt-checkbox__text--light
+  color: $light-color

@@ -1,0 +1,109 @@
+.ztt-icon-group
+  width: 100%
+  display: flex
+  align-items: center
+
+.ztt-icon-group__icon-wrapper
+  width: 30px
+  height: 30px
+  display: flex
+  align-items: center
+  justify-content: center
+
+.ztt-icon-group__icon
+  color: $text-color
+  font-size: 1.125rem
+
+.ztt-icon-group__form-group
+  width: calc(100% - 30px)
+
+.ztt-form-group
+  margin-bottom: 15px
+
+.ztt-form-group__wrapper
+  margin-top: 5px
+  padding-top: 15px
+  position: relative
+
+  &:after
+    content: ""
+    left: 50%
+    right: 0
+    bottom: 0
+    width: 0
+    height: 2px
+    display: block
+    position: absolute
+    transition: .2s width ease-in
+    transform: translateX(-50%)
+
+.ztt-form-group__wrapper--focus
+  &:after
+    width: 100%
+    background: $input-focus-border-color
+
+.ztt-form-group__wrapper--light
+  &:after
+    background: $light-color
+
+.ztt-form-group__label
+  left: 5px
+  top: 20px
+  font-size: 0.75rem
+  font-weight: 500
+  position: absolute
+  transition: .2s all $default-animation
+
+.ztt-form-group__label--floating
+  color: $label-default-color
+
+  &.ztt-form-group__label--focus
+    top: 0
+    font-size: 0.625rem
+
+.ztt-form-group__label--placeholder
+  color: $label-placeholder-color
+
+  &.ztt-form-group__label--focus
+    opacity: 0
+    pointer-events: none
+
+.ztt-form-group__label--light
+  color: $light-color
+
+.ztt-form-group__input
+  width: 100%
+  padding: 5px
+  display: block
+  background: none
+  border: 0
+  border-bottom: 1px solid $input-default-border-color
+
+  &:focus
+    outline: none
+
+  &:disabled
+    cursor: not-allowed
+    border-color: #efefef
+
+    &+ .ztt-form-group__label
+      color: #d3d3d3
+      pointer-events: none
+
+.ztt-form-group__input--light
+  color: $light-color
+  border-color: $light-color
+
+.ztt-form-group__error,
+.ztt-form-group__hint
+  display: block
+  margin-top: 5px
+  margin-left: 5px
+  font-weight: 500
+  font-size: 0.75rem
+
+.ztt-form-group__error
+  color: $error-color
+
+.ztt-form-group__hint
+  color: $hint-color
