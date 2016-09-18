@@ -17,6 +17,10 @@
         box-sizing: border-box;
       }
 
+      body {
+        background: #333;
+      }
+
       .container {
         max-width: 900px;
         margin: 30px auto;
@@ -28,9 +32,9 @@
       <!-- Input showcase -->
 
       <div class="ztt-form-group">
-        <div class="ztt-form-group__wrapper">
-          <input class="ztt-form-group__input" id="lala" type="text" ng-model="vm.name" ztt-input=""/>
-          <label class="ztt-form-group__label ztt-form-group__label--floating" for="lala">Nome</label>
+        <div class="ztt-form-group__wrapper ztt-form-group__wrapper--light">
+          <input class="ztt-form-group__input ztt-form-group__input--light" id="lala" type="text" ng-model="vm.name" ztt-input=""/>
+          <label class="ztt-form-group__label ztt-form-group__label--floating ztt-form-group__label--light" for="lala">Nome</label>
         </div>
       </div>
 

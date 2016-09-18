@@ -42,6 +42,10 @@
     width: 100%
     background: $input-focus-border-color
 
+.ztt-form-group__wrapper--light
+  &:after
+    background: $light-color
+
 .ztt-form-group__label
   left: 5px
   top: 20px
@@ -64,6 +68,9 @@
     opacity: 0
     pointer-events: none
 
+.ztt-form-group__label--light
+  color: $light-color
+
 .ztt-form-group__input
   width: 100%
   padding: 5px
@@ -82,6 +89,10 @@
     &+ .ztt-form-group__label
       color: #d3d3d3
       pointer-events: none
+
+.ztt-form-group__input--light
+  color: $light-color
+  border-color: $light-color
 
 .ztt-form-group__error,
 .ztt-form-group__hint
