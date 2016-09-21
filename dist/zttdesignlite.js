@@ -21,6 +21,7 @@
       var input         = element[0];
       var inputWrapper  = input.parentElement;
       var inputIcon     = inputWrapper.querySelector(".ztt-" + kind + "__icon-wrapper");
+      var inputLabel    = inputWrapper.querySelector(".ztt-" + kind + "__text");
 
       input.addEventListener("focusin",  focusInHandler);
       input.addEventListener("focusout", focusOutHandler);
@@ -53,6 +54,14 @@
       function inputChangeHandler (event) {
         inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--focus");
         inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--checked-focus");
+
+        if (input.checked) {
+          inputLabel.classList.add("ztt-" + kind + "__text--checked");
+          inputLabel.classList.remove("ztt-" + kind + "__text--unchecked");
+        } else {
+          inputLabel.classList.add("ztt-" + kind + "__text--unchecked");
+          inputLabel.classList.remove("ztt-" + kind + "__text--checked");
+        }
       }
 
       $timeout(inputChangeHandler, 0);

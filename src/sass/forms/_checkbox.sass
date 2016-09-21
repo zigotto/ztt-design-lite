@@ -47,10 +47,24 @@
   color: $light-color
   font-size: 0.75rem
 
-.ztt-checkbox__text
+.ztt-checkbox__text,
+.ztt-checkbox__text--checked:after,
+.ztt-checkbox__text--unchecked:after
   font-weight: 500
   font-size: 0.875rem
   color: $text-color
+
+.ztt-checkbox__text--checked:after,
+.ztt-checkbox__text--unchecked:after
+  display: block
+
+.ztt-checkbox__text--checked
+  &::after
+    content: attr(data-checked)
+
+.ztt-checkbox__text--unchecked
+  &::after
+    content: attr(data-unchecked)
 
 .ztt-checkbox__text--light
   color: $light-color
