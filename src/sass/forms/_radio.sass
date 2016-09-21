@@ -49,10 +49,24 @@
   border-radius: 50%
   transition: .2s all $default-animation
 
-.ztt-radio__text
+.ztt-radio__text,
+.ztt-radio__text--checked:after,
+.ztt-radio__text--unchecked:after
   font-weight: 500
   font-size: 0.875rem
   color: $text-color
+
+.ztt-radio__text--checked:after,
+.ztt-radio__text--unchecked:after
+  display: block
+
+.ztt-radio__text--checked
+  &::after
+    content: attr(data-checked)
+
+.ztt-radio__text--unchecked
+  &::after
+    content: attr(data-unchecked)
 
 .ztt-radio__text--light
   color: $light-color
