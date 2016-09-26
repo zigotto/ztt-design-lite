@@ -2,6 +2,7 @@ var gulp            = require("gulp");
 var sass            = require("gulp-sass");
 var watch           = require("gulp-watch");
 var concat          = require("gulp-concat");
+var uglify          = require("gulp-uglify");
 var cssnano         = require("gulp-cssnano");
 var plumber         = require("gulp-plumber");
 var browserSync     = require("browser-sync");
@@ -45,6 +46,7 @@ gulp.task("js", function () {
     .pipe(plumber())
     .pipe(angularFileSort())
     .pipe(concat("zttdesignlite.js"))
+    .pipe(uglify())
     .pipe(gulp.dest(paths.dist));
 });
 
