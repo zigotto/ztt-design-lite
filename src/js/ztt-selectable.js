@@ -7,7 +7,7 @@
 
   function zttSelectable ($timeout) {
     var directive = {
-      restrict: "A",
+      restrict: "EAC",
       require: "?ngModel",
       link: linkFunction
     };
