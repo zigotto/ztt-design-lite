@@ -18,7 +18,7 @@
 
       var input     = element[0];
       var formGroup = getClosestFormGroup(input);
-      var formLabel = document.querySelector("label[for='" + input.id + "']");
+      var formLabel = getClosestLabel(input);
 
       var floatingLabel = attributes.zttInput !== "placeholder";
 
@@ -76,6 +76,19 @@
       }
 
       return parent;
+    }
+
+    function getClosestLabel(input) {
+      var parent        = input.parentElement;
+      var labelSelector = ".ztt-form-group__label";
+      var closestLabel  = parent && parent.querySelector(labelSelector);
+
+      while (!closestLabel) {
+        parent        = parent.parentElement;
+        closestLabel  = parent && parent.querySelector(labelSelector);
+      }
+
+      return closestLabel;
     }
 
     return directive;
