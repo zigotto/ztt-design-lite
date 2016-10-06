@@ -1,7 +1,10 @@
 {
   "name": "ztt-design-lite",
   "description": "Micro frontend UI set based on Material Design",
-  "main": "zttdesignlite.css",
+  "main": [
+    "dist/zttdesignlite.css",
+    "dist/zttdesignlite.js"
+  ],
   "authors": [
     "Lucas Ramos <lucasrcdias@gmail.com>",
     "Éder Costa <eder@zigotto.com.br>",
