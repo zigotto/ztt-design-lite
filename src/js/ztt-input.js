@@ -17,8 +17,8 @@
       var formLabelFocusClass = "ztt-form-group__label--focus";
 
       var input     = element[0];
-      var formGroup = input.parentElement;
-      var formLabel = formGroup.querySelector("label");
+      var formGroup = getClosestFormGroup(input);
+      var formLabel = getClosestLabel(input);
 
       var floatingLabel = attributes.zttInput !== "placeholder";
 
@@ -35,7 +35,7 @@
       function focusInHandler(event) {
         formGroup.classList.add(formGroupFocusClass);
 
-        if (floatingLabel) {
+        if (formLabel && floatingLabel) {
           formLabel.classList.add(formLabelFocusClass);
         }
       }
@@ -43,7 +43,7 @@
       function focusOutHandler(event) {
         formGroup.classList.remove(formGroupFocusClass);
 
-        if (input.value.trim() === "") {
+        if (formLabel && input.value.trim() === "") {
           formLabel.classList.remove(formLabelFocusClass);
         }
       }
@@ -63,6 +63,32 @@
       }
 
       $timeout(inputUpdateHandler, 0);
+    }
+
+    function getClosestFormGroup(input) {
+      var parent         = input.parentElement;
+      var formGroupClass = "ztt-form-group__wrapper";
+      var isCloser       = parent && parent.classList.contains(formGroupClass);
+
+      while (!isCloser) {
+        parent   = parent.parentElement;
+        isCloser = parent && parent.classList.contains(formGroupClass);
+      }
+
+      return parent;
+    }
+
+    function getClosestLabel(input) {
+      var parent        = input.parentElement;
+      var labelSelector = ".ztt-form-group__label";
+      var closestLabel  = parent && parent.querySelector(labelSelector);
+
+      while (!closestLabel) {
+        parent        = parent.parentElement;
+        closestLabel  = parent && parent.querySelector(labelSelector);
+      }
+
+      return closestLabel;
     }
 
     return directive;
