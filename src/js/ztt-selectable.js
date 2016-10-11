@@ -51,6 +51,8 @@
         inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--focus");
         inputIcon.classList.remove("ztt-" + kind + "__icon-wrapper--checked-focus");
 
+        if (!inputLabel) { return; }
+
         if (input.checked) {
           inputLabel.classList.add("ztt-" + kind + "__text--checked");
           inputLabel.classList.remove("ztt-" + kind + "__text--unchecked");
