@@ -4,8 +4,11 @@
   border-radius: $border-radius
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12)
 
+.ztt-card--no-title
+  .ztt-card__content
+    padding-top: 20px
+
 .ztt-card__header,
-.ztt-card__content,
 .ztt-card__footer
   padding: 20px
 
@@ -43,6 +46,11 @@
 .ztt-card__option
   &:not(:last-child)
     margin-right: 5px
+
+.ztt-card__content
+  padding-left: 20px
+  padding-right: 20px
+  padding-bottom: 20px
 
 .ztt-card__footer--left
   justify-content: flex-start
