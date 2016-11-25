@@ -1,0 +1,62 @@
+.ztt-card
+  position: relative
+  background: $light-color
+  border-radius: $border-radius
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12)
+
+.ztt-card--no-title
+  .ztt-card__content
+    padding-top: 20px
+
+.ztt-card__header,
+.ztt-card__footer
+  padding: 20px
+
+.ztt-card__header,
+.ztt-card__footer
+  display: flex
+  align-items: center
+
+.ztt-card__header
+  flex-wrap: wrap
+  justify-content: space-between
+
+.ztt-card__header-content,
+.ztt-card__options
+  @media screen and (max-width: $mobile-max)
+    flex: 0 0 100%
+
+.ztt-card__icon
+  margin-right: 15px
+
+.ztt-card__title
+  margin: 0
+  font-size: 1.25rem
+
+.ztt-card__subtitle
+  margin-top: 5px
+  font-size: 1rem
+  font-weight: 400
+  color: $default-color
+
+.ztt-card__options
+  @media screen and (max-width: $mobile-max)
+    margin-top: 10px
+
+.ztt-card__option
+  &:not(:last-child)
+    margin-right: 5px
+
+.ztt-card__content
+  padding-left: 20px
+  padding-right: 20px
+  padding-bottom: 20px
+
+.ztt-card__footer--left
+  justify-content: flex-start
+
+.ztt-card__footer--right
+  justify-content: flex-end
+
+.ztt-card__footer--center
+  justify-content: center
