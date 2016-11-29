@@ -1,0 +1,124 @@
+.ztt-btn
+  padding: 10px
+  cursor: pointer
+  overflow: hidden
+  font-weight: 600
+  font-size: 0.75rem
+  position: relative
+  display: inline-block
+  will-change: background
+  text-transform: uppercase
+  transition: .2s background
+  text-rendering: optimizeLegibility
+  border-radius: $border-radius
+  border: 0
+
+//////
+// Size variation
+//////
+
+.ztt-btn--large
+  padding: 15px
+
+.ztt-btn--small
+  padding: 6px
+
+.ztt-btn--extra-small
+  padding: 3px
+  font-size: 0.625rem
+
+.ztt-btn--block
+  width: 100%
+  display: block
+
+//////
+// State variations
+//////
+
+.ztt-btn[disabled],
+.ztt-btn--disabled
+  cursor: not-allowed
+  background: $disabled-button
+  color: $disabled-button-color
+
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus:not(:active)
+    background: $disabled-button
+
+//////
+// Shape variations
+//////
+
+.ztt-btn--circle,
+.ztt-btn--circle-large
+  padding: 0
+  border-radius: 50%
+
+.ztt-btn--circle
+  width: 30px
+  height: 30px
+
+.ztt-btn--circle-large
+  width: 50px
+  height: 50px
+
+//////
+// Kind variations
+//////
+
+.ztt-btn--link
+  background: none
+
+  &:hover
+    text-decoration: underline
+
+//////
+// Child elements
+//////
+
+.ztt-btn__icon
+  font-size: 0.875rem
+
+//////
+// Ripple Effect
+//////
+
+.ztt-btn__ripple
+  width: 20px
+  height: 20px
+  position: absolute
+  border-radius: 50%
+  animation: ripple-animation 2s
+
+
+@keyframes ripple-animation
+  from
+    transform: scale(1)
+    opacity: 0.4
+
+  to
+    transform: scale(100)
+    opacity: 0
+
+//////
+// Buttons kind generation
+//////
+
+@each $button, $bg in $buttons-types-bg
+  .ztt-btn--#{$button}
+    color: $light-color
+    background: $bg
+
+@each $button, $bg in $buttons-types-darken
+  .ztt-btn--#{$button}
+    &:active,
+    &:hover,
+    &:focus,
+    &:focus:not(:active)
+      background: $bg
+
+    &:active,
+    &:focus
+      box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, .05)

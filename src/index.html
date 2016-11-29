@@ -17,6 +17,10 @@
         box-sizing: border-box;
       }
 
+      html {
+        font-size: 16px;
+      }
+
       body {
         background: #f1f1f1;
       }
@@ -25,11 +29,41 @@
         max-width: 900px;
         margin: 30px auto;
       }
+
+      .ztt-card {
+        margin-bottom: 30px;
+      }
     </style>
   </head>
   <body ng-controller="showcaseCtrl as vm">
     <div class="container">
+      <!-- Buttons showcase -->
+
+      <div class="ztt-card">
+        <div class="ztt-card__header">
+          <div class="ztt-card__header-content">
+            <h1 class="ztt-card__title">Botões</h1>
+          </div>
+        </div>
+
+        <div class="ztt-card__content">
+          <button class="ztt-btn ztt-btn--default" type="button" ztt-ripple="">default</button>
+          <button class="ztt-btn ztt-btn--default" type="button" disabled="disabled">disabled</button>
+          <button class="ztt-btn ztt-btn--link" type="button" ztt-ripple="#000">botao grande</button>
+          <button class="ztt-btn ztt-btn--default ztt-btn--large" type="button" ztt-ripple="">primary</button>
+          <button class="ztt-btn ztt-btn--default ztt-btn--small" type="button" ztt-ripple="">primary</button>
+          <button class="ztt-btn ztt-btn--default ztt-btn--extra-small" type="button" ztt-ripple="">primary</button>
+          <button class="ztt-btn ztt-btn--default ztt-btn--circle" type="button" ztt-ripple="">
+            <i class="fa fa-cog ztt-btn__icon"></i>
+          </button>
+          <button class="ztt-btn ztt-btn--default ztt-btn--circle-large" type="button" ztt-ripple="">
+            <i class="fa fa-cog ztt-btn__icon"></i>
+          </button>
+        </div>
+      </div>
+
       <!-- Input showcase -->
+
       <div class="ztt-card">
         <div class="ztt-card__header">
           <div class="ztt-card__header-content">
