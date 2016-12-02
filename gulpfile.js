@@ -2,6 +2,7 @@ var gulp            = require("gulp");
 var sass            = require("gulp-sass");
 var watch           = require("gulp-watch");
 var concat          = require("gulp-concat");
+var gulpif          = require("gulp-if");
 var uglify          = require("gulp-uglify");
 var cssnano         = require("gulp-cssnano");
 var plumber         = require("gulp-plumber");
@@ -14,7 +15,8 @@ var paths = {
   sass:     'src/sass/**/*.sass',
   mainSass: 'src/sass/zttdesignlite.sass',
   dist:     'dist/',
-  dev:      'src/'
+  src:      'src/',
+  dev:      'dev/'
 };
 
 var autoprefixerOptions = {
@@ -32,41 +34,57 @@ var autoprefixerOptions = {
   cascade: false
 };
 
-gulp.task("style", function () {
-  gulp.src(paths.mainSass)
+function proccessCssTo (location) {
+  return gulp.src(paths.mainSass)
     .pipe(plumber())
     .pipe(sass())
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(cssnano())
-    .pipe(gulp.dest(paths.dist));
-});
+    .pipe(gulp.dest(paths[location]));
+}
 
-gulp.task("js", function () {
-  gulp.src(paths.js)
+function proccessJsTo (location) {
+  return gulp.src(paths.js)
     .pipe(plumber())
     .pipe(angularFileSort())
     .pipe(concat("zttdesignlite.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.dist));
+    .pipe(gulpif(location === "dist", uglify))
+    .pipe(gulp.dest(paths[location]));
+}
+
+gulp.task("cssDev", function () {
+  return proccessCssTo("dev");
+});
+
+gulp.task("cssDist", function () {
+  return proccessCssTo("dist");
+});
+
+gulp.task("jsDev", function () {
+  return proccessJsTo("dev");
+});
+
+gulp.task("jsDist", function () {
+  return proccessJsTo("dist");
 });
 
 gulp.task("watch", function () {
   watch(paths.js, function () {
-    gulp.start("js");
+    gulp.start("jsDev");
   });
 
   watch(paths.sass, function () {
-    gulp.start("style");
+    gulp.start("cssDev");
   });
 });
 
-gulp.task('browser-sync', function () {
-  browserSync.init(paths.dev, {
+gulp.task('browser', function () {
+  browserSync.init(paths.src, {
     port: '9000',
     server: {
-      baseDir: paths.dev,
+      baseDir: paths.src,
       routes: {
-        "/dist": "dist"
+        "/dev": "dev"
       }
     },
     socket: {
@@ -76,5 +94,5 @@ gulp.task('browser-sync', function () {
   });
 });
 
-gulp.task("build",   ["style", "js"]);
-gulp.task("default", ["style", "js", "watch", "browser-sync"]);
+gulp.task("dev",   ["cssDev", "jsDev", "watch", "browser"]);
+gulp.task("build", ["cssDist", "jsDist"]);
