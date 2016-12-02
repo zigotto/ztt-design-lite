@@ -48,7 +48,7 @@ function proccessJsTo (location) {
     .pipe(plumber())
     .pipe(angularFileSort())
     .pipe(concat("zttdesignlite.js"))
-    .pipe(gulpif(location === "dist", uglify))
+    .pipe(gulpif(location === "dist", uglify()))
     .pipe(gulp.dest(paths[location]));
 }
 
