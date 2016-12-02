@@ -1,11 +1,16 @@
 # ztt-design-lite
 
+## Install
+
+Using bower:
+- `bower install ztt-design-lite`
+
 ## Commands to run the project
 
-1) **npm install**
-2) **gulp**
+- **npm install**
+- **gulp dev**
 
 ## Commands to build the project
 
-1) **gulp build**
-2) =)
+- **gulp build**
+- =)
