@@ -1,0 +1,51 @@
+.ztt-loader
+  display: none
+  position: relative
+  width: $loader-medium
+  height: $loader-medium
+
+.ztt-loader--large
+  width: $loader-large
+  height: $loader-large
+
+  .ztt-loader__circle,
+  .ztt-loader__spinner
+    width: $loader-large
+    height: $loader-large
+
+.ztt-loader--small
+  width: $loader-small
+  height: $loader-small
+
+  .ztt-loader__circle,
+  .ztt-loader__spinner
+    width: $loader-small
+    height: $loader-small
+
+.ztt-loader--active
+  display: block
+
+.ztt-loader__circle
+  width: $loader-medium
+  height: $loader-medium
+  border: $loader-width solid $loader-circle
+  border-radius: 50%
+
+.ztt-loader__spinner
+  top: 0
+  left: 0
+  border-radius: 50%
+  position: absolute
+  width: $loader-medium
+  height: $loader-medium
+  border: $loader-width solid $loader-spinner
+  border-left-color: transparent
+  border-right-color: transparent
+  border-bottom-color: transparent
+  animation: 1.5s spin ease-in-out infinite
+
+@keyframes spin
+  from
+    transform: rotate(0)
+  to
+    transform: rotate(360deg)
