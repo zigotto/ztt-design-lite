@@ -37,6 +37,8 @@
   </head>
   <body ng-controller="showcaseCtrl as vm">
     <div class="container">
+      <ztt-loader active="vm.active" size="small"></ztt-loader>
+
       <!-- Buttons showcase -->
 
       <div class="ztt-card">
@@ -211,6 +213,7 @@
           var vm = this;
 
           vm.status = "off";
+          vm.active = true;
         }
       })();
     </script>
