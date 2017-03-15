@@ -5,6 +5,8 @@
   font-weight: 600
   font-size: 0.75rem
   position: relative
+  color: $light-color
+  background: #e0e0e0
   display: inline-block
   will-change: background
   text-decoration: none
@@ -13,6 +15,16 @@
   text-rendering: optimizeLegibility
   border-radius: $border-radius
   border: 0
+
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus:not(:active)
+    background: #d8d8d8
+
+  &:active,
+  &:focus
+    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, .05)
 
 //////
 // Size variation
@@ -104,22 +116,17 @@
     opacity: 0
 
 //////
-// Buttons kind generation
+// Loader button
 //////
 
-@each $button, $bg in $buttons-types-bg
-  .ztt-btn--#{$button}
-    color: $light-color
-    background: $bg
+.ztt-btn--loading
+  .ztt-btn__text,
+  .ztt-btn__icon
+    opacity: 0
+    pointer-events: none
 
-@each $button, $bg in $buttons-types-darken
-  .ztt-btn--#{$button}
-    &:active,
-    &:hover,
-    &:focus,
-    &:focus:not(:active)
-      background: $bg
-
-    &:active,
-    &:focus
-      box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, .05)
+.ztt-btn__loader
+  top: 50%
+  left: 50%
+  position: absolute
+  transform: translate(-50%, -50%)

@@ -33,11 +33,29 @@
       .ztt-card {
         margin-bottom: 30px;
       }
+
+      .ztt-btn--primary {
+        background: #e5241c;
+      }
+
+      .ztt-btn--primary:active,
+      .ztt-btn--primary:hover,
+      .ztt-btn--primary:focus,
+      .ztt-btn--primary:focus:not(:active) {
+        background: #d01f18;
+      }
+
+      .ztt-btn--primary:active,
+      .ztt-btn--primary:focus {
+        box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, .05);
+      }
     </style>
   </head>
   <body ng-controller="showcaseCtrl as vm">
     <div class="container">
+      <ztt-loader active="vm.active" size="large"></ztt-loader>
       <ztt-loader active="vm.active" size="small"></ztt-loader>
+      <ztt-loader active="vm.active" size="extra-small"></ztt-loader>
 
       <!-- Buttons showcase -->
 
@@ -49,17 +67,21 @@
         </div>
 
         <div class="ztt-card__content">
-          <button class="ztt-btn ztt-btn--default" type="button" ztt-ripple="">default</button>
-          <button class="ztt-btn ztt-btn--default" type="button" disabled="disabled">disabled</button>
+          <button class="ztt-btn" type="button" ztt-ripple="">default</button>
+          <button class="ztt-btn" type="button" disabled="disabled">disabled</button>
           <button class="ztt-btn ztt-btn--link" type="button" ztt-ripple="#000">botao grande</button>
-          <button class="ztt-btn ztt-btn--default ztt-btn--large" type="button" ztt-ripple="">primary</button>
-          <button class="ztt-btn ztt-btn--default ztt-btn--small" type="button" ztt-ripple="">primary</button>
-          <button class="ztt-btn ztt-btn--default ztt-btn--extra-small" type="button" ztt-ripple="">primary</button>
-          <button class="ztt-btn ztt-btn--default ztt-btn--circle" type="button" ztt-ripple="">
+          <button class="ztt-btn ztt-btn--large" type="button" ztt-ripple="">primary</button>
+          <button class="ztt-btn ztt-btn--small" type="button" ztt-ripple="">primary</button>
+          <button class="ztt-btn ztt-btn--extra-small" type="button" ztt-ripple="">primary</button>
+          <button class="ztt-btn ztt-btn--circle" type="button" ztt-ripple="">
             <i class="fa fa-cog ztt-btn__icon"></i>
           </button>
-          <button class="ztt-btn ztt-btn--default ztt-btn--circle-large" type="button" ztt-ripple="">
+          <button class="ztt-btn ztt-btn--circle-large" type="button" ztt-ripple="">
             <i class="fa fa-cog ztt-btn__icon"></i>
+          </button>
+          <button class="ztt-btn ztt-btn--primary" ng-click="vm.loading = !vm.loading" ng-class="{ 'ztt-btn--loading': vm.loading }">
+            <span class="ztt-btn__text">Salvar</span>
+            <ztt-loader class="ztt-btn__loader" active="vm.loading" size="extra-small"></ztt-loader>
           </button>
         </div>
       </div>
@@ -76,7 +98,7 @@
           </div>
 
           <div class="ztt-card__options">
-            <button class="ztt-btn ztt-btn--default" type="button" ztt-ripple="">default</button>
+            <button class="ztt-btn" type="button" ztt-ripple="">default</button>
           </div>
         </div>
         <div class="ztt-card__content">
@@ -192,7 +214,7 @@
           </div>
         </div>
         <div class="ztt-card__footer ztt-card__footer--center">
-          <a class="ztt-btn ztt-btn--default" href="#" ztt-ripple="">default</a>
+          <a class="ztt-btn" href="#" ztt-ripple="">default</a>
         </div>
       </div>
     </div>
