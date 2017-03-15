@@ -124,9 +124,19 @@
   .ztt-btn__icon
     opacity: 0
     pointer-events: none
+  
+  .ztt-btn__loader
+    display: block
+  
+  .ztt-btn__text,
+  .ztt-btn__icon,
+  .ztt-btn__loader
+    will-change: opacity
+    transition: .2s opacity ease-in
 
 .ztt-btn__loader
   top: 50%
   left: 50%
+  display: none
   position: absolute
   transform: translate(-50%, -50%)
