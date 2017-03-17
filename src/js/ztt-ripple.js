@@ -19,8 +19,6 @@
       $el.addEventListener("click", clickHandler);
 
       function clickHandler (event) {
-        event.preventDefault();
-
         if ($el.querySelector(".ztt-btn__ripple")) { return; }
 
         var $ripple = document.createElement("div");

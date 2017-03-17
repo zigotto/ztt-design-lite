@@ -79,10 +79,12 @@
           <button class="ztt-btn ztt-btn--circle-large" type="button" ztt-ripple="">
             <i class="fa fa-cog ztt-btn__icon"></i>
           </button>
-          <button class="ztt-btn ztt-btn--primary" ng-click="vm.loading = !vm.loading" ng-class="{ 'ztt-btn--loading': vm.loading }">
-            <span class="ztt-btn__text">Salvar</span>
-            <ztt-loader class="ztt-btn__loader" active="true" size="extra-small"></ztt-loader>
-          </button>
+          <form method="GET" action="/awdaw.php">
+            <button class="ztt-btn ztt-btn--primary" type="submit" ng-click="vm.loading = !vm.loading" ng-class="{ 'ztt-btn--loading': vm.loading }" ztt-ripple="">
+              <span class="ztt-btn__text">Salvar</span>
+              <ztt-loader class="ztt-btn__loader" active="true" size="extra-small"></ztt-loader>
+            </button>
+          </form>
         </div>
       </div>
 
